@@ -1,0 +1,43 @@
+
+<h2>Tic Tac Toe</h2>
+
+<%= form_for @conn, page_path(@conn, :new_game), [as: :search], fn _ ->%>
+  <%= submit "New Game"%>
+<% end %>
+
+<table id="board" border="1" game_id=<%= @game_id %>>
+  <tr class="row1">
+    <td class="square" position="0,0">
+      <%= get_square(assigns[:board], "0", "0") %>
+    </td>
+    <td class="square" position="1,0">
+      <%= get_square(@board, "1", "0") %>
+    </td>
+    <td class="square" position="2,0">
+      <%= get_square(@board, "2", "0") %>
+    </td>
+  </tr>
+  <tr class="row2">
+    <td class="square" position="0,1">
+      <%= get_square(@board, "0", "1") %>
+    </td>
+    <td class="square" position="1,1">
+      <%= get_square(@board, "1", "1") %>
+    </td>
+    <td class="square" position="2,1">
+      <%= get_square(@board, "2", "1") %>
+    </td>
+  </tr>
+  <tr class="row3">
+    <td class="square" position="0,2">
+      <%= get_square(@board, "0", "2") %>
+    </td>
+    <td class="square" position="1,2">
+      <%= get_square(@board, "1", "2") %>
+    </td>
+    <td class="square" position="2,2">
+      <%= get_square(@board, "2", "2") %>
+    </td>
+  </tr>
+</table>
+<span id="err_msg"></span>
